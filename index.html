@@ -208,7 +208,7 @@ const money=v=>Number.isFinite(v)?v.toLocaleString('en-US',{minimumFractionDigit
 const qtyText=v=>Number.isFinite(v)?String(round(v,6)):'—';
 const uid=()=>globalThis.crypto?.randomUUID?.()||'e'+Date.now()+Math.random().toString(16).slice(2);
 const EXTRA_WORK={burner:{priceId:'feeBurner',label:'Burner Shifting',description:'Burner Shifting Fee'},temporary:{priceId:'feeTemporary',label:'Temporary Disconnection',description:'Temporary Disconnection Fee'},nameChange:{priceId:'feeNameChange',label:'Name Change',description:'Name Change Fee'},reconnection:{priceId:'feeReconnection',label:'Reconnection',description:'Reconnection Fee'}};
-const CHARGES=[{id:'feeBurner',name:'Part C: Burner Shifting Fee',unit:'Application',rate:1000},{id:'feeTemporary',name:'Part C: Temporary Disconnection Fee',unit:'Application',rate:500},{id:'feeNameChange',name:'Part C: Name Change Fee',unit:'Application',rate:1000},{id:'feeReconnection',name:'Part C: Reconnection Fee',unit:'Application',rate:500},{id:'riserShift',name:'Part C: Riser Shifting Charge',unit:'No.',rate:1000}];
+const CHARGES=[{id:'feeBurner',name:'Part C: Burner Shifting Fee',unit:'Application',rate:1000},{id:'feeTemporary',name:'Part C: Temporary Disconnection Fee',unit:'Application',rate:500},{id:'feeNameChange',name:'Part C: Name Change Fee',unit:'Application',rate:2000},{id:'feeReconnection',name:'Part C: Reconnection Fee',unit:'Application',rate:500},{id:'riserShift',name:'Part C: Riser Shifting Charge',unit:'No.',rate:1000}];
 
 const LEGACY_CONSTRUCTION_IDS=['lay','withdraw','weld','road','test','caseInstall','mobilize','mobilizeLeak','shiftWithout','shiftWith'];
 const basePrices=()=>Object.fromEntries([...MATERIALS,...CONSTRUCTION.map(x=>({...x,rate:null})),...CHARGES].map(x=>[x.id,x.rate]));
